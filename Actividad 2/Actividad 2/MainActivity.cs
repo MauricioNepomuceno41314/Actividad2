@@ -1,21 +1,31 @@
 ﻿using System;
-using Xamarin.Forms;
+using Android.App;
+using Android.Content;
+using Android.Runtime;
+using Android.Views;
+using Android.Widget;
+using Android.OS;
 
-namespace HolaMundo
+namespace Actividad_2
 {
-    public class App
+    [Activity(Label = "Actividad_2", MainLauncher = true, Icon = "@drawable/icon")]
+    public class MainActivity : Activity
     {
-        public static Page GetMainPage()
+        int count = 1;
+
+        protected override void OnCreate(Bundle bundle)
         {
-            return new ContentPage
-            {
-                Content = new Label
-                {
-                    Text = "Nombre: Mauricio Nepomuceno De Florencio Número de cuenta: 413140698 ",
-                    VerticalOptions = LayoutOptions.CenterAndExpand,
-                    HorizontalOptions = LayoutOptions.CenterAndExpand,
-                },
-            };
+            base.OnCreate(bundle);
+
+            // Set our view from the "main" layout resource
+            SetContentView(Resource.Layout.Main);
+
+            // Get our button from the layout resource,
+            // and attach an event to it
+            Button button = FindViewById<Button>(Resource.Id.MyButton);
+
+            button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
         }
     }
 }
+
