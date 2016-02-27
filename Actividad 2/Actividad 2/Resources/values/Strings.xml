@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Hello">Hello World, Click Me!</string>
+    <string name="Hello">Nombre: Mauricio Nepomuceno De Florencio y Núm. de cuenta: 413140698</string>
     <string name="ApplicationName">Actividad 2</string>
 </resources>
